@@ -4,17 +4,33 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int sum = 0;
-	int x;
-	int i;
+	int x,y;
+	char op;
+	int result; 
 	
-	printf("정수를  입력하시오.");
-	scanf("%d", &x);
-	 
-	for(i=0;i<=x;i++)
-		sum = sum + i; 
+	printf("enter the calculation");
+	scanf("%d %c %d", &x, &op, &y);
 	
-	printf("더하기의 결과는 %i입니다.\n",sum);//결과 
+	switch(op)
+	{
+		case '+':
+			result = x + y;
+			break;
+			
+		case '-':
+			result = x - y;
+			break;
+			
+		case '*':
+			result = x * y;
+			break;
+			
+		default :
+			result = x / y;
+			break;
+	}
+	
+	printf("=%i\n",result);//결과 
 	
 	return 0; 
 }
